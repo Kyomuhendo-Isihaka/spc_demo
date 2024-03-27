@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+{% block content %}
+{% load static %}
+
+<div class="w3-card-2 w3-round-xlarge w-75 mx-auto h-100 p-2" style="margin-top: 100px; background-color:#fff;">
+    <p class="w3-center mb-5 mt-2 " style="font-size:20px ;"><b>Upload a PDF file</b></p>
+    <form action="" method="POST" enctype="multipart/form-data" class="m-5">
+        {% csrf_token %}
+        <p class="text-center text-danger">{{err}}</p>
+        <div class="row mx-auto">
+            <div class="col-md-6 col-sm-6">
+                <label ><b>Upload File</b></label><br>
+                <label for="file"><i class="fa fa-upload" style="font-size:20px;"></i></label>
+                
+                <input type="file" name="u_file" id="file" style="display:none" required>
+            </div>
+        </div>
+        <div class="mt-4 mb-5 mx-auto w3-center">
+            <input type="submit" value="Check Plagiarism" name="submit" class="w3-btn w-50 mb-4 btn-primary mx-auto" id="">
+        </div>
+    </form>
+</div>
+
+<script>
+    // Function to handle the JSON response and display the error message as a popup
+    function handleErrorResponse(response) {
+        if (response.error) {
+            alert(response.error); // Display the error message as a popup
+        }
+    }
+
+    // Function to handle form submission
+    function handleSubmit(event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+
+        // Fetch the JSON response from your Django view
+        fetch('checkplagiarism/') // Use the URL path of your Django view
+            .then(response => response.json())
+            .then(data => handleErrorResponse(data))
+            .catch(error => console.error('Error:', error));
+    }
+
+    // Attach event listener to the form submission event
+    document.getElementById('upload-form').addEventListener('submit', handleSubmit);
+</script>
+
+{% endblock %}

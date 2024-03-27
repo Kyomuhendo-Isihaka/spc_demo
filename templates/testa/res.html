@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+</head>
+<body>
+    <h2>Results</h2>
+    <p><strong>Provided Text:</strong> {{ text }}</p>
+    <p><strong>Similarity Percentage:</strong> {{ similarity_percent }}%</p>
+    <p><strong>Text Size:</strong> {{ text_size }}</p>
+    <h3>Related Works:</h3>
+    <ul>
+        {% for work in related_works %}
+        <li>{{ work }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

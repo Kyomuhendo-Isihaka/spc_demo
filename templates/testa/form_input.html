@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Text</title>
+</head>
+<body>
+    <h2>Upload Text</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="text">Enter Text:</label><br>
+        <textarea id="text" name="text" rows="4" cols="50"></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
