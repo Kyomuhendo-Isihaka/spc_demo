@@ -172,19 +172,6 @@ def results(request, text):
     }
     return render(request, "results.html", context)
 
-def listen(request):
-    text=""
-    file_path = ple.upload_file(request)
-    if file_path:
-        with open(file_path, 'r') as file:
-            text= ple.read_pdf(file_path) 
-            speaking_thread = ple.threading.Thread(target=ple.speak, args=(text,))
-            speaking_thread.start()    
-            # ple.speak(text)
-    context = {
-        'text':text,
-    }
-    return render(request, "listen.html", context)
 
 
 def profile(request):

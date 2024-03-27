@@ -1,7 +1,6 @@
 from difflib import SequenceMatcher
 from django.conf import settings 
 from googlesearch import search
-import pyttsx3
 import PyPDF2
 import requests
 import os 
@@ -13,7 +12,7 @@ import spacy
 from io import BytesIO
 
 
-# speaker = pyttsx3.init()
+
 # Load the pre-trained English language model
 nlp = spacy.load("en_core_web_sm")
 

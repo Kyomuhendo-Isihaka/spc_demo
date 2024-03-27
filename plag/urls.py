@@ -12,7 +12,7 @@ urlpatterns = [
     path('dictionary/', views.dictionary, name='dictionary'),
     path('work/', views.work, name='work'),
     path('results/<str:text>/', views.results, name='results'),
-    path('listen/', views.listen, name='listen'),
+   
 
     path('profile/', views.profile, name='profile'),
 
