@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import get_object_or_404
 from .models import *
-from . import plagiarismeng as ple
+from plag import plagiarismeng as ple
 import os
 
 
