@@ -4,3 +4,4 @@ PyMuPDF
 PyPDF2
 spacy
 pytesseract
+gunicorn
