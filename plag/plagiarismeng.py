@@ -13,7 +13,7 @@ import spacy
 from io import BytesIO
 
 
-speaker = pyttsx3.init()
+# speaker = pyttsx3.init()
 # Load the pre-trained English language model
 nlp = spacy.load("en_core_web_sm")
 
@@ -84,16 +84,18 @@ def retrieve_related_works(query):
 
 def speak(words):
     try:
-        speaker = pyttsx3.init()
-        voice = speaker.getProperty('voices')
-        speaker.setProperty('voices', voice[1])
-        speaker.say(words)
-        speaker.runAndWait()
-        speaker.stop()
+
+        hi
+        # speaker = pyttsx3.init()
+        # voice = speaker.getProperty('voices')
+        # speaker.setProperty('voices', voice[1])
+        # speaker.say(words)
+        # speaker.runAndWait()
+        # speaker.stop()
     except Exception as e:
         print("An error occurred:", e)
     finally:
-        speaker.stop()
+        speaker
 
 def extract_pdf_text(pdf_file):
     directory = settings.MEDIA_ROOT
